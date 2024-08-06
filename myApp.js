@@ -31,7 +31,6 @@ instructing the browser to not bypass the provided Content-Type.
 */
 app.use(helmet.noSniff());
 
-
 /*
 Some web applications will serve untrusted HTML for download. Some versions of Internet Explorer by default open those HTML files in the context of your site. 
 This means that an untrusted HTML page could start doing bad things in the context of your pages. This middleware sets the X-Download-Options header to noopen. 
@@ -57,7 +56,11 @@ the cost of a performance penalty.
 app.use(helmet.dnsPrefetchControl());
 
 
-
+/*
+If you are releasing an update for your website, and you want the users to always download the newer version, you can (try to) disable caching on client’s browser. 
+It can be useful in development too. Caching has performance benefits, which you will lose, so only use this option when there is a real need.
+*/
+app.use(helmet.noCache());
 
 
 
