@@ -73,7 +73,6 @@ app.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scr
 
 /*
 Integration
-*/
 
 app.use(helmet({
   frameguard: {         // configure
@@ -87,6 +86,7 @@ app.use(helmet({
   },
   dnsPrefetchControl: false     // disable
 }))
+*/
 
 
 
