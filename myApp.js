@@ -62,7 +62,11 @@ It can be useful in development too. Caching has performance benefits, which you
 */
 app.use(helmet.noCache());
 
-
+/*
+By setting and configuring a Content Security Policy you can prevent the injection of anything unintended into your page. This will protect your app from XSS 
+vulnerabilities, undesired tracking, malicious frames, and much more. CSP works by defining an allowed list of content sources which are trusted
+*/
+app.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'", "trusted-cdn.com"] }} ));
 
 
 
