@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const helmet = require('helmet');
-
+const bcrypt = require('bcrypt');
 
 /*It can help to provide an extra layer of security to reduce the ability of attackers to determine the software that a server uses, known as “fingerprinting.” 
 Though not a security issue itself, reducing the ability to fingerprint an application improves its overall security posture. Server software can be fingerprinted 
